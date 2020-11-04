@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: desafio1-channel4-service
+  namespace: desafio-channel4
+  labels:
+    app: desafio1-channel4
+spec:
+  ports:
+    - name: desafio1-channel4
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: desafio1-channel4
+  clusterIP: ""
+  type: ClusterIP
+  sessionAffinity: None

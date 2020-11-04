@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: desafio1-channel4-deployment
+  namespace: desafio-channel4
+  labels:
+    app: desafio1-channel4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desafio1-channel4
+  template:
+    metadata:
+      labels:
+        app: desafio1-channel4
+    spec:
+      containers:
+      - name: desafio1-channel4
+        image: felipematoswb/desafio1-channel4:latest
+        ports:
+        - containerPort: 80

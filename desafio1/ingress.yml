@@ -1,0 +1,17 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: desafio1-channel4-ingress
+  namespace: desafio-channel4
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+    - http:
+        paths:
+          - path:
+            backend: 
+              serviceName: desafio1-channel4-service
+              servicePort: 80
+status:
+  loadBalancer: {}
